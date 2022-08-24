@@ -18,7 +18,7 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 echo "Creating containers......."
 
 docker pull mysql:8.0
-docker run --name mysql-A -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:8.0
+docker run --name mysql-A -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:8.0 --default-authentication-plugin=mysql_native_password
 
 docker pull webdevops/php-apache
 docker run --name web-server -dt -p 80:80 --mount type=volume,src=app,dst=/app/ webdevops/php-apache:alpine-php7
