@@ -3,9 +3,23 @@ Docker: practical use in the microservices scenario
 
 ## Creating and running the Docker installation file
 
+Run the following commands on a Linux server (use the "install-docker-ubuntu.sh" file). I used an EC2 instance on AWS (aws-1).
+
 $ nano install-docker-ubuntu.sh<br />
 $ chmod +x install-docker-ubuntu.sh<br />
 $ ./install-docker-ubuntu.sh<br />
+
+<figure>
+    <figcaption>EC2 instances created on AWS</figcaption>
+    <img src="./img/image25.png"
+         alt="Instances on AWS">
+</figure>
+
+<figure>
+    <figcaption>Ports opened on servers</figcaption>
+    <img src="./img/image24.png"
+         alt="Ports opned">
+</figure>
 
 Useful Docker commands:
 
@@ -14,6 +28,47 @@ $ docker start mysql-A<br />
 $ docker stop mysql-A<br />
 $ docker rm mysql-A<br />
 $ docker rm --force web-server<br />
+
+## Interacting with the created database
+
+Establish a connection to the database (I used MySQL Workbench) and run the file "banco.sql" as a script.<br />
+To do this you need to open port 3306 on the Linux server.
+
+<figure>
+    <figcaption>Database connection</figcaption>
+    <img src="./img/image1.png"
+         alt="Database connection">
+</figure>
+
+<figure>
+    <figcaption>Creation of meubanco database</figcaption>
+    <img src="./img/image2.png"
+         alt="Creating database">
+</figure>
+
+<figure>
+    <figcaption>Showing the databases</figcaption>
+    <img src="./img/image3.png"
+         alt="Displaying the databases">
+</figure>
+
+<figure>
+    <figcaption>Creating Clientes table</figcaption>
+    <img src="./img/image5.png"
+         alt="Table Clientes">
+</figure>
+
+<figure>
+    <figcaption>Showing meubanco tables</figcaption>
+    <img src="./img/image4.png"
+         alt="showing the database tables">
+</figure>
+
+<figure>
+    <figcaption>Inserting data into Clientes table</figcaption>
+    <img src="./img/image7.png"
+         alt="inserting data">
+</figure>
 
 ## Starting a Docker Swarm cluster
 
@@ -88,42 +143,6 @@ Enjoy your studies!
 
 
 ## Project Images
-
-<figure>
-    <figcaption>Database connection</figcaption>
-    <img src="./img/image1.png"
-         alt="Database connection">
-</figure>
-
-<figure>
-    <figcaption>Creation of meubanco database</figcaption>
-    <img src="./img/image2.png"
-         alt="Creating database">
-</figure>
-
-<figure>
-    <figcaption>Showing the databases</figcaption>
-    <img src="./img/image3.png"
-         alt="Displaying the databases">
-</figure>
-
-<figure>
-    <figcaption>Creating Clientes table</figcaption>
-    <img src="./img/image5.png"
-         alt="Table Clientes">
-</figure>
-
-<figure>
-    <figcaption>Showing meubanco tables</figcaption>
-    <img src="./img/image4.png"
-         alt="showing the database tables">
-</figure>
-
-<figure>
-    <figcaption>Inserting data into Clientes table</figcaption>
-    <img src="./img/image7.png"
-         alt="inserting data">
-</figure>
 
 <figure>
     <figcaption>Inserting data into Clientes table using the file index.php via web browser</figcaption>
@@ -218,11 +237,5 @@ Enjoy your studies!
 <figure>
     <figcaption>Insert...</figcaption>
     <img src="./img/image23.png"
-         alt="inserting data">
-</figure>
-
-<figure>
-    <figcaption>Insert...</figcaption>
-    <img src="./img/image24.png"
          alt="inserting data">
 </figure>
