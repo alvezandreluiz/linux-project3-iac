@@ -1,5 +1,5 @@
 # linux-project3-iac
-Docker: practical use in the microservices scenario
+Docker: practical use in the microservices scenario. Project part of Digital Innovation One's (DIO) Linux Experience Bootcamp.
 
 ## Creating and running the Docker installation file
 
