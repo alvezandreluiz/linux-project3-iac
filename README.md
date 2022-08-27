@@ -95,6 +95,7 @@ Every time you refresh the browser a new register is included into the database.
 Open port 2377 on servers
 
 On the main server (leader):<br />
+$ docker rm --force web-server<br />
 $ docker swarm init
 
 On the other servers (workers):<br />
@@ -105,7 +106,6 @@ $ docker node ls
 
 ## Creating a container service on the cluster (replicas)
 
-$ docker rm --force web-server<br />
 $ docker service create --name web-server --replicas 10 -dt -p 80:80 --mount type=volume,src=app,dst=/app/ webdevops/php-apache:alpine-php7
 
 Command to check the replicas in the cluster:<br />
