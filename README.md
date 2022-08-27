@@ -27,7 +27,6 @@ $ docker ps<br />
 $ docker start mysql-A<br />
 $ docker stop mysql-A<br />
 $ docker rm mysql-A<br />
-$ docker rm --force web-server<br />
 
 ## Interacting with the created database
 
@@ -93,6 +92,8 @@ Every time you refresh the browser a new register is included into the database.
 
 ## Starting a Docker Swarm cluster
 
+Open port 2377 on servers
+
 On the main server (leader):<br />
 $ docker swarm init
 
@@ -104,6 +105,7 @@ $ docker node ls
 
 ## Creating a container service on the cluster (replicas)
 
+$ docker rm --force web-server<br />
 $ docker service create --name web-server --replicas 10 -dt -p 80:80 --mount type=volume,src=app,dst=/app/ webdevops/php-apache:alpine-php7
 
 Command to check the replicas in the cluster:<br />
@@ -128,6 +130,7 @@ Export list for aws-1:<br />
 On the other servers:<br />
 $ apt-get install nfs-common
 
+Open port 2049 on servers<br />
 Mount the shared folder by the main server<br />
 $ mount 172.31.95.210:/var/lib/docker/volumes/app/_data /var/lib/docker/volumes/app/_data
 
@@ -206,6 +209,7 @@ $ docker container ls
 
 ## Testing the Cluster
 
+Open port 4500 on servers<br />
 Go to https://loader.io/, create an account if you don't have one.<br />
 Create a target host with the IP address of the main server and port 4500 (http://3.88.85.142:4500, for example).<br />
 Create a .txt file, with the name and content of the generated token, in the /var/lib/docker/volumes/app/_data 
